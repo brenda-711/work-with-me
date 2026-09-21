@@ -30,7 +30,7 @@ Tell Claude: "paste this url into the work with brenda form: https://script.goog
     cd ~/Desktop/work-with-brenda && git add -A && git commit -m "connect sheet" && git push origin main && git push origin main:gh-pages
 
 ## step 5: test it
-Open the live url, submit once, check the sheet. Column G (STATUS) is yours for notes like "replied" or "booked".
+Open the live url, submit once, check the sheet. Column H (STATUS) is yours for notes like "replied" or "booked".
 
 ## sharing
 Link in bio version with tracking (shows up in the Source column):

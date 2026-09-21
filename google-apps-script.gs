@@ -5,8 +5,8 @@
  * Google Sheet (Extensions > Apps Script), then deploy it as a Web App.
  * Every form submission adds one row to the sheet. Full steps in SETUP.md.
  *
- * Columns: A Timestamp, B Name, C Email, D Need, E Details, F Budget,
- *          G STATUS (yours, manual, the script never touches it), H Source, I Page
+ * Columns: A Timestamp, B Name, C Instagram, D Email, E Need, F Details, G Budget,
+ *          H STATUS (yours, manual, the script never touches it), I Source, J Page
  */
 
 function doPost(e) {
@@ -17,8 +17,8 @@ function doPost(e) {
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
 
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(['Timestamp', 'Name', 'Email', 'Need', 'Details', 'Budget', 'STATUS', 'Source', 'Page']);
-      sheet.getRange(1, 1, 1, 9).setFontWeight('bold');
+      sheet.appendRow(['Timestamp', 'Name', 'Instagram', 'Email', 'Need', 'Details', 'Budget', 'STATUS', 'Source', 'Page']);
+      sheet.getRange(1, 1, 1, 10).setFontWeight('bold');
       sheet.setFrozenRows(1);
     }
 
@@ -26,6 +26,7 @@ function doPost(e) {
     sheet.appendRow([
       new Date(),
       p.name || '',
+      p.instagram ? '@' + p.instagram : '',
       p.email || '',
       p.need || '',
       p.details || '',
