@@ -173,16 +173,10 @@
         <div class="err">give me a little context so I can actually help</div>
       </div>
 
-      <div class="field" data-req data-group="budget">
-        <div class="legend">budget <span class="hint">rough is fine</span></div>
-        <div class="pills" role="radiogroup" aria-label="budget">
-          <label class="pill"><input type="radio" name="budget" value="under $500"><span>under $500</span></label>
-          <label class="pill"><input type="radio" name="budget" value="$500 to $1,500"><span>$500 to $1,500</span></label>
-          <label class="pill"><input type="radio" name="budget" value="$1,500 to $5,000"><span>$1,500 to $5,000</span></label>
-          <label class="pill"><input type="radio" name="budget" value="$5,000+"><span>$5,000+</span></label>
-          <label class="pill"><input type="radio" name="budget" value="not sure yet"><span>not sure yet</span></label>
-        </div>
-        <div class="err">pick a range, "not sure yet" counts</div>
+      <div class="field" data-req>
+        <label for="budget">budget <span class="hint">rough is fine, "not sure yet" counts</span></label>
+        <input id="budget" name="budget" type="text" autocomplete="off" placeholder="e.g. around $2k">
+        <div class="err">give me a rough number or say not sure yet</div>
       </div>
 
       <button type="submit" id="go">send it</button>
@@ -240,7 +234,7 @@
       data.append('email', form.email.value.trim());
       data.append('need', form.querySelector('input[name="need"]:checked').value);
       data.append('details', form.details.value.trim());
-      data.append('budget', form.querySelector('input[name="budget"]:checked').value);
+      data.append('budget', form.budget.value.trim());
       data.append('source', source);
       data.append('page', location.href);
 
